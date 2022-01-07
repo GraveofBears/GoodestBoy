@@ -7,8 +7,8 @@
     <ProjectGuid>{96EAE66D-7B07-4B9B-A274-AB1FBB8BAEB0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BunnyBoo</RootNamespace>
-    <AssemblyName>BunnyBoo</AssemblyName>
+    <RootNamespace>GoodestBoy</RootNamespace>
+    <AssemblyName>GoodestBoy</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <LangVersion>9</LangVersion>
@@ -46,8 +46,8 @@
         <GamePath Condition="!Exists('$(GamePath)')">$([MSBuild]::GetRegistryValueFromView('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 892970', 'InstallLocation', null, RegistryView.Registry64, RegistryView.Registry32))</GamePath>
         <_SteamLibraryPath>$([MSBuild]::GetRegistryValueFromView('HKEY_CURRENT_USER\SOFTWARE\Valve\Steam', 'SteamPath', null, RegistryView.Registry32))</_SteamLibraryPath>
         <GamePath Condition="!Exists('$(GamePath)') AND '$(_SteamLibraryPath)' != ''">$(_SteamLibraryPath)\steamapps\common\Valheim</GamePath>
-        <GamePath Condition="!Exists('$(GamePath)')">C:\Program Files\Steam\steamapps\common\Valheim</GamePath>
-        <GamePath Condition="!Exists('$(GamePath)')">C:\Program Files (x86)\Steam\steamapps\common\Valheim</GamePath>
+        <GamePath Condition="!Exists('$(GamePath)')">E:\Steam\steamapps\common\ValheimLATEST</GamePath>
+        <GamePath Condition="!Exists('$(GamePath)')">E:\Steam\steamapps\common\ValheimLATEST</GamePath>
         <GamePath Condition="!Exists('$(GamePath)')">E:\Steam\steamapps\common\ValheimLATEST</GamePath>
       </PropertyGroup>
     </When>
@@ -77,17 +77,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BunnyBoo.cs" />
+    <Compile Include="GermanShepherd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="assets\bunnyyummy" />
     <Content Include="CreatureManager.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ILRepack.targets" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="assets\gsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
