@@ -23,7 +23,6 @@ namespace BunnyBoo
 			};
 			BunnyYummy.Drops["Wood"].Amount = new Range(1, 2);
 			BunnyYummy.Drops["Wood"].DropChance = 100f;
-
 		}
 	}
 }
