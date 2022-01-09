@@ -14,40 +14,44 @@ namespace GoodestBoy
 
 		public void Awake()
 		{
-
-			Item YummyBone = new("gsd", "YummyBone");
-			YummyBone.Crafting.Add(CraftingTable.None, 1);
-
-			Creature AssholeBunny = new("gsd", "AssholeBunny")
+			Creature EvilBunny = new("gsd", "EvilBunny")              //add creature
 			{
 				Biome = Heightmap.Biome.Meadows,
-				GroupSize = new Range(1, 2),
+				GroupSize = new Range(2, 4),
 				CheckSpawnInterval = 600,
-				RequiredWeather = new List<Weather> { Weather.Rain },
-				Maximum = 2
+				RequiredWeather = new List<Weather> { Weather.ClearSkies },
+				Maximum = 4
 			};
-			AssholeBunny.Drops["YummyBone"].Amount = new Range(1, 2);
-			AssholeBunny.Drops["YummyBone"].DropChance = 100f;
+			EvilBunny.Drops["YummyBone"].Amount = new Range(1, 2);
+			EvilBunny.Drops["YummyBone"].DropChance = 100f;
+			EvilBunny.Drops["LeatherScraps"].Amount = new Range(1, 2);
+			EvilBunny.Drops["LeatherScraps"].DropChance = 20f;
 
-			Creature BestestDog = new("gsd", "BestestDog")
+			Creature BestestDog = new("gsd", "BestestDog")            //add creature
 			{
 				Biome = Heightmap.Biome.BlackForest,
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
 				RequiredWeather = new List<Weather> { Weather.ClearSkies },
-				Maximum = 2
+				Maximum = 1
 			};
 			BestestDog.Drops["BoneFragments"].Amount = new Range(1, 2);
 			BestestDog.Drops["BoneFragments"].DropChance = 100f;
 
-			ItemManager.PrefabManager.RegisterPrefab("gsd", "dead_rabbit");
-			ItemManager.PrefabManager.RegisterPrefab("gsd","Bestest_Pup");
-			ItemManager.PrefabManager.RegisterPrefab("gsd", "GermanShepherd_Rag");
-
-			Item BestestStick = new("gsd", "BestestStick");
+			Item BestestStick = new("gsd", "BestestStick");           //add item
 			BestestStick.Crafting.Add(CraftingTable.Workbench, 1);
 			BestestStick.RequiredItems.Add("Wood", 1);
 			BestestStick.CraftAmount = 1;
+
+			Item YummyBone = new("gsd", "YummyBone");                  //add item
+			YummyBone.Crafting.Add(CraftingTable.Workbench, 1);
+			YummyBone.RequiredItems.Add("BoneFragments", 2);
+			YummyBone.CraftAmount = 1;
+
+			ItemManager.PrefabManager.RegisterPrefab("gsd", "dead_rabbit");    //zsync enforced
+			ItemManager.PrefabManager.RegisterPrefab("gsd", "Bestest_Pup");
+			ItemManager.PrefabManager.RegisterPrefab("gsd", "GermanShepherd_Rag");
+
 		}
 	}
 }
