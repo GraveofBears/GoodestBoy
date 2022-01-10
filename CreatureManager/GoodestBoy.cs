@@ -17,8 +17,10 @@ namespace GoodestBoy
 			Creature EvilBunny = new("gsd", "EvilBunny")              //add creature
 			{
 				Biome = Heightmap.Biome.Meadows,
+				SpawnChance = 30,
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
+				SpecificSpawnTime = SpawnTime.Day,
 				RequiredWeather = new List<Weather> { Weather.ClearSkies },
 				Maximum = 2
 			};
@@ -30,8 +32,10 @@ namespace GoodestBoy
 			Creature BrownEvilBunny = new("gsd", "BrownEvilBunny")              //add creature
 			{
 				Biome = Heightmap.Biome.Meadows,
+				SpawnChance = 30,
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
+				SpecificSpawnTime = SpawnTime.Day,
 				RequiredWeather = new List<Weather> { Weather.ClearSkies },
 				Maximum = 2
 			};
@@ -44,13 +48,16 @@ namespace GoodestBoy
 			Creature BestestDog = new("gsd", "BestestDog")            //add creature
 			{
 				Biome = Heightmap.Biome.BlackForest,
-				GroupSize = new Range(1, 2),
+				SpawnChance = 10,
+			    GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 300,
 				RequiredWeather = new List<Weather> { Weather.Rain },
 				Maximum = 1
 			};
 			BestestDog.Drops["BoneFragments"].Amount = new Range(1, 2);
 			BestestDog.Drops["BoneFragments"].DropChance = 100f;
+			BestestDog.Drops["WolfMeat"].Amount = new Range(1, 2);
+			BestestDog.Drops["WolfMeat"].DropChance = 50f;
 
 			Item BestestStick = new("gsd", "BestestStick");           //add item
 			BestestStick.Crafting.Add(CraftingTable.Workbench, 1);
