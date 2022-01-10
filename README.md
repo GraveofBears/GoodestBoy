@@ -36,7 +36,7 @@ YummyBones & BestestStick!
 
 >>Please download the latest copy of Bepinex per author's instructions.
 
->>Place the Boomlings Folder inside of the "Bepinex\plugins\" folder.
+>>Place the GoodestBoy Folder inside of the "Bepinex\plugins\" folder.
 
 <p>
 
