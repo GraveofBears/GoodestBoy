@@ -49,7 +49,7 @@ YummyBones & BestestStick!
 
 
 
-This mod is using CreatureManager by Blaxxun
+# This mod is using: <a href="https://github.com/blaxxun-boop/CreatureManager">CreatureManager by Blaxxun</a>
 
 # Creature Manager
 
