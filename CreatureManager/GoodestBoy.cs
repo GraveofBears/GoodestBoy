@@ -9,7 +9,7 @@ namespace GoodestBoy
 	public class GoodestBoy : BaseUnityPlugin
 	{
 		private const string ModName = "GoodestBoy";
-		private const string ModVersion = "0.0.4";
+		private const string ModVersion = "0.0.7";
 		private const string ModGUID = "org.bepinex.plugins.goodestboy";
 
 		public void Awake()
@@ -17,22 +17,36 @@ namespace GoodestBoy
 			Creature EvilBunny = new("gsd", "EvilBunny")              //add creature
 			{
 				Biome = Heightmap.Biome.Meadows,
-				GroupSize = new Range(2, 4),
+				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
 				RequiredWeather = new List<Weather> { Weather.ClearSkies },
-				Maximum = 4
+				Maximum = 2
 			};
 			EvilBunny.Drops["YummyBone"].Amount = new Range(1, 2);
 			EvilBunny.Drops["YummyBone"].DropChance = 100f;
 			EvilBunny.Drops["LeatherScraps"].Amount = new Range(1, 2);
-			EvilBunny.Drops["LeatherScraps"].DropChance = 20f;
+			EvilBunny.Drops["LeatherScraps"].DropChance = 10f;
+
+			Creature BrownEvilBunny = new("gsd", "BrownEvilBunny")              //add creature
+			{
+				Biome = Heightmap.Biome.Meadows,
+				GroupSize = new Range(1, 2),
+				CheckSpawnInterval = 600,
+				RequiredWeather = new List<Weather> { Weather.ClearSkies },
+				Maximum = 2
+			};
+			BrownEvilBunny.Drops["YummyBone"].Amount = new Range(1, 2);
+			BrownEvilBunny.Drops["YummyBone"].DropChance = 100f;
+			BrownEvilBunny.Drops["LeatherScraps"].Amount = new Range(1, 2);
+			BrownEvilBunny.Drops["LeatherScraps"].DropChance = 10f;
+
 
 			Creature BestestDog = new("gsd", "BestestDog")            //add creature
 			{
 				Biome = Heightmap.Biome.BlackForest,
 				GroupSize = new Range(1, 2),
-				CheckSpawnInterval = 600,
-				RequiredWeather = new List<Weather> { Weather.ClearSkies },
+				CheckSpawnInterval = 300,
+				RequiredWeather = new List<Weather> { Weather.Rain },
 				Maximum = 1
 			};
 			BestestDog.Drops["BoneFragments"].Amount = new Range(1, 2);
@@ -50,6 +64,7 @@ namespace GoodestBoy
 
 			ItemManager.PrefabManager.RegisterPrefab("gsd", "dead_rabbit");    //zsync enforced
 			ItemManager.PrefabManager.RegisterPrefab("gsd", "Bestest_Pup");
+			ItemManager.PrefabManager.RegisterPrefab("gsd", "dead_rabbit_brown");
 			ItemManager.PrefabManager.RegisterPrefab("gsd", "GermanShepherd_Rag");
 
 		}
