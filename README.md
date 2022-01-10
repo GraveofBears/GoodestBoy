@@ -21,6 +21,13 @@ YummyBones & BestestStick!
 >When your BestestDog is happy he will even carry his own BestestStick!
 
 
+<p align="center">
+
+  <img src="https://media3.giphy.com/media/mrlehxQ3O3OWL6nEmM/giphy.gif" alt="GoodestBoy">
+
+</p>
+
+
 </p>
 
 <h2>  Install Notes: </h2>
@@ -38,14 +45,6 @@ YummyBones & BestestStick!
 <p align="center"><h2>For Questions or Comments find Gravebear in the Odin Plus Team on Discord:</h2></p>
 
 <p align="center"><a href="https://discord.gg/mbkPcvu9ax"><img src="https://i.imgur.com/Ji3u63C.png"></a></p>
-
-
-<p align="center">
-
-<img src="https://media3.giphy.com/media/mrlehxQ3O3OWL6nEmM/giphy.gif" alt="GoodestBoy">
-
-</p>
-
 
 
 # This mod is using: <a href="https://github.com/blaxxun-boop/CreatureManager">CreatureManager & ItemManager</a> by Blaxxun.
