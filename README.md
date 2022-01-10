@@ -20,7 +20,9 @@ YummyBones & BestestStick!
 >That is right, the BestestDog loves these things and will tame pretty quick once finding them and be your forever friend.
 >When your BestestDog is happy he will even carry his own BestestStick!
 
-<img src="https://media3.giphy.com/media/mrlehxQ3O3OWL6nEmM/giphy.gif">
+<p align="center">
+<img src="https://media.giphy.com/media/mrlehxQ3O3OWL6nEmM/giphy-downsized-large.gif">
+</p>
 
 <h2>  Install Notes: </h2>
 
