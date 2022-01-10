@@ -22,7 +22,7 @@ YummyBones & BestestStick!
 
 <p align="center">
 
-  <img src="https://media3.giphy.com/media/mrlehxQ3O3OWL6nEmM/giphy.gif" alt="ALCHEMY STATIONS">
+<img src="https://media3.giphy.com/media/mrlehxQ3O3OWL6nEmM/giphy.gif" alt="GoodestBoy">
 
 </p>
 
