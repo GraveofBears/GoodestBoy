@@ -9,7 +9,7 @@ namespace GoodestBoy
 	public class GoodestBoy : BaseUnityPlugin
 	{
 		private const string ModName = "GoodestBoy";
-		private const string ModVersion = "0.1.0";
+		private const string ModVersion = "0.1.1";
 		private const string ModGUID = "org.bepinex.plugins.goodestboy";
 
 		public void Awake()
