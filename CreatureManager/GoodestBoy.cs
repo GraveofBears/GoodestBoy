@@ -26,7 +26,7 @@ namespace GoodestBoy
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
 				SpecificSpawnTime = SpawnTime.Day,
-			    RequiredWeather = Weather.ClearSkies,
+			        RequiredWeather = Weather.ClearSkies,
 				Maximum = 1
 			};
 			EvilBunny.Drops["LeatherScraps"].Amount = new Range(1, 2);
