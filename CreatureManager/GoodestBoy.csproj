@@ -53,6 +53,10 @@
     </When>
   </Choose>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.5.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Steam\steamapps\common\ValheimLATEST\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="assembly_valheim_publicized">
       <HintPath>E:\Steam\steamapps\common\ValheimLATEST\valheim_Data\Managed\publicized_assemblies\assembly_valheim_publicized.dll</HintPath>
     </Reference>

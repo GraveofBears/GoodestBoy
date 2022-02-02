@@ -2,6 +2,8 @@
 using BepInEx;
 using ItemManager;
 using CreatureManager;
+using HarmonyLib;
+using ServerSync;
 
 namespace GoodestBoy
 {
@@ -9,23 +11,22 @@ namespace GoodestBoy
 	public class GoodestBoy : BaseUnityPlugin
 	{
 		private const string ModName = "GoodestBoy";
-		private const string ModVersion = "0.1.1";
+		private const string ModVersion = "0.1.2";
 		private const string ModGUID = "org.bepinex.plugins.goodestboy";
 
 		public void Awake()
 		{
-			Creature EvilBunny = new("gsd", "EvilBunny")              //add creature
+
+		Creature EvilBunny = new("gsd", "EvilBunny")              //add creature
 			{
 				Biome = Heightmap.Biome.Meadows,
-				SpawnChance = 30,
+			    SpawnChance = 30,
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
 				SpecificSpawnTime = SpawnTime.Day,
-				RequiredWeather = new List<Weather> { Weather.ClearSkies },
+			    RequiredWeather = Weather.ClearSkies,
 				Maximum = 1
 			};
-			EvilBunny.Drops["YummyBone"].Amount = new Range(1, 2);
-			EvilBunny.Drops["YummyBone"].DropChance = 100f;
 			EvilBunny.Drops["LeatherScraps"].Amount = new Range(1, 2);
 			EvilBunny.Drops["LeatherScraps"].DropChance = 10f;
 			EvilBunny.Drops["Carrot"].Amount = new Range(1, 2);
@@ -38,11 +39,9 @@ namespace GoodestBoy
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
 				SpecificSpawnTime = SpawnTime.Day,
-				RequiredWeather = new List<Weather> { Weather.ClearSkies },
+				RequiredWeather = Weather.ClearSkies,
 				Maximum = 1
 			};
-			BrownEvilBunny.Drops["YummyBone"].Amount = new Range(1, 2);
-			BrownEvilBunny.Drops["YummyBone"].DropChance = 15f;
 			BrownEvilBunny.Drops["LeatherScraps"].Amount = new Range(1, 2);
 			BrownEvilBunny.Drops["LeatherScraps"].DropChance = 10f;
 			BrownEvilBunny.Drops["Carrot"].Amount = new Range(1, 2);
@@ -53,15 +52,18 @@ namespace GoodestBoy
 			{
 				Biome = Heightmap.Biome.BlackForest,
 				SpawnChance = 10,
-			    GroupSize = new Range(1, 2),
+				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 300,
-				RequiredWeather = new List<Weather> { Weather.Rain },
-				Maximum = 1
+				RequiredWeather = Weather.Rain,
+				SpecificSpawnTime = SpawnTime.Night,
+			    Maximum = 1
 			};
 			BestestDog.Drops["BoneFragments"].Amount = new Range(1, 2);
 			BestestDog.Drops["BoneFragments"].DropChance = 15f;
 			BestestDog.Drops["WolfMeat"].Amount = new Range(1, 2);
 			BestestDog.Drops["WolfMeat"].DropChance = 50f;
+			BestestDog.FoodItems = "BestestStick, YummyBone, RawMeat";
+	
 
 			Item BestestStick = new("gsd", "BestestStick");           //add item
 			BestestStick.Crafting.Add(CraftingTable.Workbench, 1);
