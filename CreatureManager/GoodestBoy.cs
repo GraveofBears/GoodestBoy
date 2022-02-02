@@ -70,8 +70,6 @@ namespace GoodestBoy
 			BestestDog.Drops["WolfMeat"].Amount = new Range(1, 2);
 			BestestDog.Drops["WolfMeat"].DropChance = 50f;
 
-
-
 			Item BestestStick = new("gsd", "BestestStick", "assets");           //add item
 			BestestStick.Crafting.Add(CraftingTable.Workbench, 1);
 			BestestStick.RequiredItems.Add("Wood", 2);
