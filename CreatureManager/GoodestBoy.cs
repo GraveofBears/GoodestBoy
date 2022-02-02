@@ -20,11 +20,11 @@ namespace GoodestBoy
 		Creature EvilBunny = new("gsd", "EvilBunny")              //add creature
 			{
 				Biome = Heightmap.Biome.Meadows,
-			    SpawnChance = 30,
+			        SpawnChance = 30,
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
 				SpecificSpawnTime = SpawnTime.Day,
-			    RequiredWeather = Weather.ClearSkies,
+			        RequiredWeather = Weather.ClearSkies,
 				Maximum = 1
 			};
 			EvilBunny.Drops["LeatherScraps"].Amount = new Range(1, 2);
@@ -56,7 +56,7 @@ namespace GoodestBoy
 				CheckSpawnInterval = 300,
 				RequiredWeather = Weather.Rain,
 				SpecificSpawnTime = SpawnTime.Night,
-			    Maximum = 1
+			        Maximum = 1
 			};
 			BestestDog.Drops["BoneFragments"].Amount = new Range(1, 2);
 			BestestDog.Drops["BoneFragments"].DropChance = 15f;
