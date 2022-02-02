@@ -11,15 +11,17 @@ namespace GoodestBoy
 	public class GoodestBoy : BaseUnityPlugin
 	{
 		private const string ModName = "GoodestBoy";
-		private const string ModVersion = "0.1.2";
+		private const string ModVersion = "0.1.3";
 		private const string ModGUID = "org.bepinex.plugins.goodestboy";
 
 		public void Awake()
 		{
 
-		Creature EvilBunny = new("gsd", "EvilBunny")              //add creature
+		Creature EvilBunny = new("gsd", "EvilBunny", "assets")              //add creature
 			{
 				Biome = Heightmap.Biome.Meadows,
+			    CanBeTamed = false,
+				FoodItems = "Carrot",
 			    SpawnChance = 30,
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
@@ -32,9 +34,12 @@ namespace GoodestBoy
 			EvilBunny.Drops["Carrot"].Amount = new Range(1, 2);
 			EvilBunny.Drops["Carrot"].DropChance = 10f;
 			
-			Creature BrownEvilBunny = new("gsd", "BrownEvilBunny")              //add creature
+
+			Creature BrownEvilBunny = new("gsd", "BrownEvilBunny", "assets")              //add creature
 			{
 				Biome = Heightmap.Biome.Meadows,
+				CanBeTamed = false,
+				FoodItems = "Carrot",
 				SpawnChance = 30,
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 600,
@@ -48,37 +53,34 @@ namespace GoodestBoy
 			BrownEvilBunny.Drops["Carrot"].DropChance = 10f;
 
 
-			Creature BestestDog = new("gsd", "BestestDog")            //add creature
+			Creature BestestDog = new("gsd", "BestestDog", "assets")            //add creature
 			{
 				Biome = Heightmap.Biome.BlackForest,
+				CanBeTamed = true,
+				FoodItems = "BestestStick, YummyBone, RawMeat, CookedMeat, BoarJerky, NeckTail, DeerStew, NeckTailGrilled, DeerMeat, CookedDeerMeat, MinceMeatSauce, Sausages, Entrails, SerpentMeatCooked, SerpentStew, SerpentMeat, CookedWolfMeat, WolfMeat, Wolfjerky, LoxMeat, CookedLoxMeat, LoxPie",
 				SpawnChance = 10,
 				GroupSize = new Range(1, 2),
 				CheckSpawnInterval = 300,
 				RequiredWeather = Weather.Rain,
 				SpecificSpawnTime = SpawnTime.Night,
-			    Maximum = 1
+				Maximum = 1
 			};
 			BestestDog.Drops["BoneFragments"].Amount = new Range(1, 2);
 			BestestDog.Drops["BoneFragments"].DropChance = 15f;
 			BestestDog.Drops["WolfMeat"].Amount = new Range(1, 2);
 			BestestDog.Drops["WolfMeat"].DropChance = 50f;
-			BestestDog.FoodItems = "BestestStick, YummyBone, RawMeat";
-	
 
-			Item BestestStick = new("gsd", "BestestStick");           //add item
+
+
+			Item BestestStick = new("gsd", "BestestStick", "assets");           //add item
 			BestestStick.Crafting.Add(CraftingTable.Workbench, 1);
 			BestestStick.RequiredItems.Add("Wood", 2);
 			BestestStick.CraftAmount = 1;
 
-			Item YummyBone = new("gsd", "YummyBone");                  //add item
+			Item YummyBone = new("gsd", "YummyBone", "assets");                  //add item
 			YummyBone.Crafting.Add(CraftingTable.Workbench, 1);
 			YummyBone.RequiredItems.Add("BoneFragments", 4);
 			YummyBone.CraftAmount = 1;
-
-			ItemManager.PrefabManager.RegisterPrefab("gsd", "dead_rabbit");    //zsync enforced
-			ItemManager.PrefabManager.RegisterPrefab("gsd", "Bestest_Pup");
-			ItemManager.PrefabManager.RegisterPrefab("gsd", "dead_rabbit_brown");
-			ItemManager.PrefabManager.RegisterPrefab("gsd", "GermanShepherd_Rag");
 
 		}
 	}
